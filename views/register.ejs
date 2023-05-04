@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Register Here</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter name"><br><br>
+        <input type="email" name="email" placeholder="Enter email"><br><br>
+        <input type="number" name="age" placeholder="Enter age"><br><br>
+        <input type="text" name="gender" placeholder="Enter gender"><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <% if(students && students.length> 0) { %>
+        <h2>Search Here</h2>
+        <form action="/search">
+            <input type="search" name="name" placeholder="name">
+            <input type="search" name="email" placeholder="email">
+            <input type="search" name="age" placeholder="age">
+            <input type="search" name="gender" placeholder="gender">
+            <input type="submit" value="submit">
+        </form>
+        <h1>Students Details</h1>
+        <table border="1px solid black">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            <% students.forEach((student)=>{ %>
+                <tr>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.email %>
+                    </td>
+                    <td>
+                        <%= student.age %>
+                    </td>
+                    <td>
+                        <%= student.gender %>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+        <% } %>
+
+</body>
+
+</html>
